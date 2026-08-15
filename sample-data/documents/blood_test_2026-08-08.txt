@@ -1,0 +1,9 @@
+CITY CARE HOSPITAL — LABORATORY REPORT
+Patient: Khyathi Sharma
+Date: 08-Aug-2026
+Doctor: Dr. Ramesh Iyer
+Hospital: City Care Hospital
+
+HbA1c: 7.8% (Reference: 4.0-5.6%)
+Fasting Glucose: 138 mg/dL (Reference: 70-100 mg/dL)
+TSH: 2.1 uIU/mL (Reference: 0.4-4.0 uIU/mL)

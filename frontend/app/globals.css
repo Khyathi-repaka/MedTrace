@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-bg text-ink font-sans antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: "Fraunces", serif;
+  font-feature-settings: "ss01" 1;
+}
+
+.eyebrow {
+  @apply text-[11px] tracking-[0.12em] uppercase text-ink-faint font-medium;
+}
+
+.data-value {
+  @apply font-mono tabular-nums;
+}
+
+.card {
+  @apply bg-surface border border-border rounded-xl p-5 shadow-card;
+}
+
+/* Card system variants — intentionally different radius/depth/weight per
+   role, rather than one card component reused everywhere. A featured panel
+   should feel heavier and more considered than a compact metadata card. */
+.card-feature {
+  @apply bg-surface border border-border rounded-2xl p-7 shadow-card relative overflow-hidden;
+}
+
+.card-compact {
+  @apply bg-surface border border-border rounded-lg p-4 shadow-card;
+}
+
+.card-panel {
+  @apply bg-healing-soft/70 rounded-xl p-5 border-0;
+}
+
+.btn-primary {
+  @apply bg-accent text-white rounded-lg px-4 py-2 text-sm font-medium
+         hover:bg-accent-strong transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.btn-ghost {
+  @apply text-ink-muted hover:text-accent text-sm transition-colors;
+}
+
+.input {
+  @apply w-full bg-surface border border-border rounded-lg px-3 py-2 text-sm
+         placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-shadow;
+}
+
+.pill {
+  @apply text-[11px] uppercase tracking-wide px-2 py-0.5 rounded-full font-medium;
+}
+
+/* Signature motif: a faint EKG trace, used as a hairline under the sidebar
+   mark and as the connecting line down the medical timeline. Reused rather
+   than decorative — it is literally the shape of the data this product
+   organizes. */
+.trace-hairline {
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20240%2020%22%3E%3Cpath%20d%3D%22M0%2C10%20H88%20L97%2C2%20L106%2C18%20L115%2C2%20L124%2C10%20H240%22%20fill%3D%22none%22%20stroke%3D%22%231F5275%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: repeat-x;
+  background-size: 240px 20px;
+  opacity: 0.55;
+}
+
+.trace-vertical {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2096%22%3E%3Cpath%20d%3D%22M8%2C0%20L8%2C36%20L2%2C44%20L13%2C52%20L8%2C60%20L8%2C96%22%20fill%3D%22none%22%20stroke%3D%22%23AFC7D8%22%20stroke-width%3D%221.6%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: repeat-y;
+  background-size: 16px 96px;
+  background-position: center top;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up {
+    animation: fadeUp 0.5s ease-out both;
+  }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

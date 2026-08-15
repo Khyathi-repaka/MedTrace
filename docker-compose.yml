@@ -1,0 +1,54 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: medtrace
+      POSTGRES_PASSWORD: medtrace
+      POSTGRES_DB: medtrace
+    ports:
+      - "5432:5432"
+    volumes:
+      - medtrace_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medtrace"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://medtrace:medtrace@db:5432/medtrace
+      CHROMA_PERSIST_DIR: /data/chroma
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+      - ./ai:/app/ai
+      - ./rag:/app/rag
+      - ./database:/app/database
+      - ./sample-data:/app/sample-data
+      - medtrace_chroma:/data/chroma
+      - medtrace_uploads:/app/uploads
+    ports:
+      - "8000:8000"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build: ./frontend
+    env_file: .env
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+
+volumes:
+  medtrace_pgdata:
+  medtrace_chroma:
+  medtrace_uploads:

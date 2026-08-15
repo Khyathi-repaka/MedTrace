@@ -1,0 +1,13 @@
+CITY CARE HOSPITAL — PRESCRIPTION
+Patient: Khyathi Sharma
+Date: 10-Jan-2025
+Doctor: Dr. Ramesh Iyer
+Hospital: City Care Hospital
+
+Medication: Metformin
+Dosage: 500mg
+Frequency: Twice daily
+
+Medication: Atorvastatin
+Dosage: 10mg
+Frequency: Once daily at night

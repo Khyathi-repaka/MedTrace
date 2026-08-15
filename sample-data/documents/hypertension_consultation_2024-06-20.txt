@@ -1,0 +1,15 @@
+GREENFIELD MEDICAL CENTER
+Consultation Report
+
+Patient: Khyathi Sharma
+Date: 20-Jun-2024
+Doctor: Dr. Anita Rao
+Hospital: Greenfield Medical Center
+
+Symptoms: occasional headaches, dizziness
+
+Diagnosis: Hypertension
+
+Blood Pressure: 148/94 mmHg (Reference: <120/80 mmHg)
+
+Medication: Amlodipine

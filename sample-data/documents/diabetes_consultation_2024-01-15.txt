@@ -1,0 +1,13 @@
+CITY CARE HOSPITAL
+Consultation Report
+
+Patient: Khyathi Sharma
+Date: 15-Jan-2024
+Doctor: Dr. Ramesh Iyer
+Hospital: City Care Hospital
+
+Symptoms: fatigue, frequent urination, excessive thirst
+
+Diagnosis: Type 2 Diabetes Mellitus
+
+Recommendation: Start metformin, lifestyle modification, follow-up blood work in 6 weeks.
