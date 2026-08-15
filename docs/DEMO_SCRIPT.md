@@ -43,9 +43,3 @@
     provider-abstraction design that lets `AI_PROVIDER` switch between
     OpenAI, Gemini, and the offline demo fallback with no code changes.
 
-## Founder Q&A prompts to pre-empt (see brief §64)
-Can I upload a report? Does AI actually process it? Where is it stored? Can
-I track conditions/medications? Can I search old reports? Can another
-patient access my records? What happens if the answer isn't in my records?
-Does this replace a doctor? — the walkthrough above answers all of these
-live.
